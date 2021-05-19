@@ -13,12 +13,16 @@ class MrCoxallStack {
     self.stack.append(pushNumber) 
   }
 
+  // This method returns the last integer in the stack.
   func Peek() -> Int {
-    return self.stack.last!
+    return self.stack[self.stack.count - 1]
   }
 
+  // This method pops the top integer from the stack.
   func Pop() -> Int {
-    return self.stack.popLast()!
+    let element = self.Peek()
+    self.stack.remove(at: self.stack.count - 1)
+    return element
   }
 
   // This method prints out the list of items in the stack.
